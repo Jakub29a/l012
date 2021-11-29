@@ -1,0 +1,28 @@
+<tr>
+    <form action="/commit" method="POST">
+        <input type="hidden" name="hid" value="{{_id}}" />
+        <td>{{@index}}</td>
+        <td><select name="ins">
+                <option value="0" {{#if (eq ins 0) }}selected{{/if}}>NIE</option>
+                <option value="1" {{#if (eq ins 1) }}selected{{/if}}>TAK</option>
+                <option value="2" {{#if (eq ins 2) }}selected{{/if}}>BRAK</option>
+            </select></td>
+        <td><select name="fuel">
+                <option value="0" {{#if (eq fuel 0) }}selected{{/if}}>NIE</option>
+                <option value="1" {{#if (eq fuel 1) }}selected{{/if}}>TAK</option>
+                <option value="2" {{#if (eq fuel 2) }}selected{{/if}}>BRAK</option>
+            </select></td>
+        <td><select name="dmg">
+                <option value="0" {{#if (eq dmg 0) }}selected{{/if}}>NIE</option>
+                <option value="1" {{#if (eq dmg 1) }}selected{{/if}}>TAK</option>
+                <option value="2" {{#if (eq dmg 2) }}selected{{/if}}>BRAK</option>
+            </select></td>
+        <td><select name="d44">
+                <option value="0" {{#if (eq d44 0) }}selected{{/if}}>NIE</option>
+                <option value="1" {{#if (eq d44 1) }}selected{{/if}}>TAK</option>
+                <option value="2" {{#if (eq d44 2) }}selected{{/if}}>BRAK</option>
+            </select></td>
+        <td><input type="submit" onclick="return confirm('czy napewno chcesz zmienic?')" value="UPDATE" /></td>
+    </form>
+    {{#if editable }}<td><button onclick="subcan('{{_id}}')">CANCEL</button></td>{{/if}}
+</tr>

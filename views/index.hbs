@@ -1,0 +1,60 @@
+<h1>Index</h1>
+<form class="inld" action="/add" method="POST">
+    <h2>Dane Pojazdu:</h2>
+    <table>
+        <tr>
+            <td>ubezpieczony:</td>
+            <td><input type="checkbox" name="ins" /></td>
+        </tr>
+        <tr>
+            <td>benzyna:</td>
+            <td><input type="checkbox" name="fuel" /></td>
+        </tr>
+        <tr>
+            <td>uszkodzony:</td>
+            <td><input type="checkbox" name="dmg" /></td>
+        </tr>
+        <tr>
+            <td>napęd 4x4:</td>
+            <td><input type="checkbox" name="d44" /></td>
+        </tr>
+    </table>
+    <input type="submit" value="Przeslij" />
+</form>
+<div class="inld">
+    <h2>Wszystkie pojazdy:</h2>
+    <table>
+        <tr>
+            <th></th>
+            <th>ubezpieczony</th>
+            <th>benzyna</th>
+            <th>uszkodzony</th>
+            <th>napęd 4x4</th>
+            <th></th>
+            {{#if editable }}<th></th>{{/if}}
+        </tr>
+        {{#each cars}}
+        {{#if (eq ../edid _id)}}{{> display2}}{{else}}{{> display1}}{{/if}}
+        {{/each}}
+    </table>
+</div>
+<form id="delf" action="/delete" method="POST"><input id="deli" type="hidden" name="id" value="" /></form>
+<form id="edif" action="/inedit" method="POST"><input id="edii" type="hidden" name="id" value="" /></form>
+<script>
+    function subdel(id) {
+        let a = window.confirm("czy napewno chcesz usunac?");
+        if (a) {
+            document.getElementById("deli").value = id;
+            document.getElementById("delf").submit();
+        }
+    }
+    //  window.confirm("czy napewno chcesz zmienic?");
+    function subedit(id) {
+        console.log("aaa");
+        document.getElementById("edii").value = id;
+        document.getElementById("edif").submit();
+    }
+    function subcan(id) {
+        window.location.replace("/editable");
+    }
+</script>
