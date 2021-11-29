@@ -1,17 +1,16 @@
 {
-  "name": "l012",
-  "version": "1.0.0",
-  "description": "niewiemcotunapisac",
-  "main": "server.js",
-  "dependencies": {
-    "express": "^4.17.1"
-  },
-  
-  "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
-  },
-  "author": "jakub salawa",
-  "license": "ISC"
+    "name": "l012",
+    "version": "1.0.0",
+    "description": "niewiemcotunapisac",
+    "main": "server.js",
+    "dependencies": {
+        "express": "^4.17.1",
+        "express-handlebars": "^6.0.2"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node server.js"
+    },
+    "author": "jakub salawa",
+    "license": "ISC"
 }
