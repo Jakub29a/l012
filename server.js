@@ -14,7 +14,7 @@ const carsdb = new Datastore({
 app.set('views', path.join(__dirname, 'views'));
 
 
-app.engine('hbs', hbs({
+app.engine('hbs', hbs.create({
     defaultLayout: 'main.hbs',
     extname: '.hbs',
     partialsDir: "views/partials",
@@ -27,7 +27,7 @@ app.engine('hbs', hbs({
             return a == b;
         }
     }
-}));
+}).engine);
 
 
 app.set('view engine', 'hbs');
